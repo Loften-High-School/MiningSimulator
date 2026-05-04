@@ -4,5 +4,5 @@ using System.Collections;
 
 public class Slot : MonoBehaviour
 {
-    public GameObject currenItem; // the item currently held in this slot
+    public GameObject currentItem; // the item currently held in this slot
 }

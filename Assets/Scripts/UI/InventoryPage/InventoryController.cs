@@ -18,7 +18,7 @@ public class InventoryController : MonoBehaviour
             {
                 GameObject item = Instantiate(itemPrefabs[i], slot.transform);
                 item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-                //slot.currentItem = item;
+                slot.currentItem = item;
             }
         }
     }
