@@ -1,7 +1,11 @@
+using System;
 using UnityEngine;
 
-public class MiningScript : MonoBehaviour
+public class MinableScript : MonoBehaviour
 {
+    public GameObject itemPrefab;
+    public int Health = 100;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,7 +15,11 @@ public class MiningScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    
+	    if (Health <= 0)
+        {
+            Destroy(gameObject); 
+            Instantiate(itemPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        }
 	
     }
 
@@ -19,5 +27,6 @@ public class MiningScript : MonoBehaviour
     private void OnMouseDown()                
     {
         Debug.Log(gameObject.name + " was clicked!");
+        Health -= 10;
     }
 }
