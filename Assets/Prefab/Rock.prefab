@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MiningScript
   objectsToSpawn:
   - {fileID: 2853353306808412626, guid: 17e0c82c66c0a495a865cd5b77499222, type: 3}
+  - {fileID: 2853353306808412626, guid: 655387a6c07b843ccaa7e31ea6e43b0f, type: 3}
   minAmount: 2
   maxAmount: 7
   Health: 40

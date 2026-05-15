@@ -40,7 +40,7 @@ public class MinableScript : MonoBehaviour
         {
             Vector3 MoveAmount = new Vector3 (UnityEngine.Random.Range(-1.5f, 1.5f), 0f,0f);
             Vector3 SlightMove = MoveAmount + gameObject.transform.position;
-            // Random object from array
+            
             GameObject prefab = objectsToSpawn[UnityEngine.Random.Range(0, objectsToSpawn.Length)];
             Instantiate(prefab, SlightMove, gameObject.transform.rotation);
             Debug.Log(amount);
