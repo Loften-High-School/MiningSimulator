@@ -8,9 +8,13 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     Transform originalParent;
     CanvasGroup canvasGroup;
 
+    public GameObject gameC;
+
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+
+        gameC = GameObject.Find("GameController");
     }   
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -32,15 +36,18 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         canvasGroup.alpha = 1f; // no longer transparent
 
         Slot dropSlot = eventData.pointerEnter?.GetComponent<Slot>(); // slot where item dropped 
+        GameObject Dobject =  eventData.pointerEnter?.gameObject;
         if(dropSlot == null)
         {
             GameObject dropItem = eventData.pointerEnter;
             if(dropItem != null)
             {
                 dropSlot = dropItem.GetComponentInParent<Slot>();
+                Debug.Log(dropSlot);
             }
         }
         Slot originalSlot = originalParent.GetComponent<Slot>();
+        Debug.Log(originalSlot);
 
         if(dropSlot != null)
         {
@@ -50,15 +57,20 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                 dropSlot.currentItem.transform.SetParent(originalSlot.transform);
                 originalSlot.currentItem = dropSlot.currentItem;
                 dropSlot.currentItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                
             }
             else
             {
                 originalSlot.currentItem = null;
+                gameC.GetComponent<InventoryController>().EmptySlots.Add(originalParent.gameObject);
+                Debug.Log("Added");
             }
 
             //move item into drop slot
             transform.SetParent(dropSlot.transform);
             dropSlot.currentItem = gameObject;
+            Debug.Log("Dropped");
+            gameC.GetComponent<InventoryController>().EmptySlots.Remove(Dobject);
         }
         else
         {
