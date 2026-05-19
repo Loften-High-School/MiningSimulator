@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7535325521231382809}
   - component: {fileID: 7944222900925391326}
   - component: {fileID: 2548718405927516965}
+  - component: {fileID: 983877670625338467}
   m_Layer: 7
   m_Name: RareRockBits
   m_TagString: Pickupable
@@ -47,11 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf70252e5dbe4551815589518d47885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerInRange: 0
-  CanPickup: 0
-  Intsystem: {fileID: 1522044675948742179, guid: 5777d2577323749908f2c594b8115798, type: 3}
   invmanager: {fileID: 0}
   Itemininv: {fileID: 7023288591640270627, guid: 2fc631c9320ad4993b86b679a24c694a, type: 3}
+  MyIntSys: {fileID: 983877670625338467}
 --- !u!61 &7944222900925391326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,6 +143,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.91911507, y: 0.76947856}
   m_EdgeRadius: 0
+--- !u!114 &983877670625338467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853353306808412626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc7b4ea141b44d83851de57daf3dff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractSystem
+  playerInRange: 0
+  CanInteract: 0
+  Intsystem: {fileID: 0}
 --- !u!1 &5947949750728465752
 GameObject:
   m_ObjectHideFlags: 0

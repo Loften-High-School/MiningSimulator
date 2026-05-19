@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class PlayerPickupSystem : MonoBehaviour
 {
-    [SerializeField] private Transform IntertactCheckPoint;
-    [SerializeField] private Vector2 IntertactRange = new Vector2(1.68f, 1.61f);
-    [SerializeField] private LayerMask InteractLayer;
+    [SerializeField] Transform IntertactCheckPoint;
+    [SerializeField] Vector2 IntertactRange = new Vector2(1.68f, 1.61f);
+    [SerializeField] LayerMask DroppedItemsLayer;
+    [SerializeField] LayerMask ShopLayer;
 
     public bool inRange;
  
@@ -16,7 +17,7 @@ public class PlayerPickupSystem : MonoBehaviour
     void Update()
     {
         //Interact Check
-		if (Physics2D.OverlapBox(IntertactCheckPoint.position, IntertactRange, 0, InteractLayer)) //checks if their is an Interactible Object in range
+		if (Physics2D.OverlapBox(IntertactCheckPoint.position, IntertactRange, 0, DroppedItemsLayer) || Physics2D.OverlapBox(IntertactCheckPoint.position, IntertactRange, 0, ShopLayer)) //checks if their is an Interactible Object in range
 		{
 			inRange = true;
         }	

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8584532117447481200}
-  - component: {fileID: 6084879031423368035}
-  - component: {fileID: 1577375383558826838}
   - component: {fileID: 935293627550485254}
+  - component: {fileID: 6981547540460998458}
+  - component: {fileID: 5904205219135086317}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Mineable
@@ -29,12 +29,33 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.022, y: -3.427, z: 0}
-  m_LocalScale: {x: 1.2931, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.65, y: 2.0493388, z: 2.0493388}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6084879031423368035
+--- !u!114 &935293627550485254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6438555860017243782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356ffa93ac187494ba6460d56eeae6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MiningScript
+  objectsToSpawn:
+  - {fileID: 2853353306808412626, guid: 17e0c82c66c0a495a865cd5b77499222, type: 3}
+  - {fileID: 2853353306808412626, guid: 655387a6c07b843ccaa7e31ea6e43b0f, type: 3}
+  - {fileID: 2853353306808412626, guid: 17e0c82c66c0a495a865cd5b77499222, type: 3}
+  - {fileID: 2853353306808412626, guid: 17e0c82c66c0a495a865cd5b77499222, type: 3}
+  - {fileID: 2853353306808412626, guid: 17e0c82c66c0a495a865cd5b77499222, type: 3}
+  minAmount: 2
+  maxAmount: 7
+  Health: 40
+--- !u!212 &6981547540460998458
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,19 +102,19 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
+  m_Sprite: {fileID: 3452003437791708593, guid: f69349bbbbba5478d8d16595502fee64, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.75, y: 0.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1577375383558826838
-CircleCollider2D:
+--- !u!60 &5904205219135086317
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,23 +147,29 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.003716682, y: -0.11534822}
-  m_Radius: 0.46654862
---- !u!114 &935293627550485254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6438555860017243782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356ffa93ac187494ba6460d56eeae6a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MiningScript
-  objectsToSpawn:
-  - {fileID: 2853353306808412626, guid: 17e0c82c66c0a495a865cd5b77499222, type: 3}
-  - {fileID: 2853353306808412626, guid: 655387a6c07b843ccaa7e31ea6e43b0f, type: 3}
-  minAmount: 2
-  maxAmount: 7
-  Health: 40
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.75, y: 0.51}
+    newSize: {x: 0.75, y: 0.51}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.009938996, y: 0.2440066}
+      - {x: -0.10828111, y: 0.2143379}
+      - {x: -0.14439431, y: 0.19322194}
+      - {x: -0.15354562, y: 0.014685124}
+      - {x: -0.29480442, y: -0.021970585}
+      - {x: -0.35523447, y: -0.13429423}
+      - {x: -0.36960903, y: -0.2410587}
+      - {x: 0.36332056, y: -0.2410587}
+      - {x: 0.3426564, y: -0.16661777}
+      - {x: 0.22159569, y: -0.0455037}
+      - {x: 0.1990134, y: 0.08411769}
+      - {x: 0.15572521, y: 0.115698345}
+      - {x: 0.14535116, y: 0.21317616}
+  m_UseDelaunayMesh: 0

@@ -52,6 +52,7 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 [sourceFiles]
 Assets/
  GameManager.cs
+ InteractSystem.cs
  Pickupable.cs
  Player/
   Move.cs
@@ -67,6 +68,7 @@ Assets/
    MenuController.cs
    StartMenuController.cs
    TabController.cs
+ ShopScript.cs
  TextMesh Pro/Examples & Extras/Scripts/
   Benchmark01.cs
   Benchmark01_UGUI.cs
